@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Filterable Responsive Lightbox Gallery Tutorial</title>
+
+<!--magnific-popup css cdn link-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
+<link rel="stylesheet"href="style1.css">
+
+
+</head>
+<body>
+
+<h1 class="title">Image Gallery</h1>
+
+<div class="gallery">
+   <ul class="controls">
+      <li class="buttons active" data-filter="All">All</li>
+      <li class="buttons" data-filter="Food">Food</li>
+      <li class="buttons" data-filter="Nature">Nature</li>
+      <li class="buttons" data-filter="Bikes">Bikes</li>
+      <li class="buttons" data-filter="Sketches">Sketches</li>
+      <li class="buttons" data-filter="Moon">Moon</li>
+   </ul>
+<div class="container">
+    <div class="image-container">
+
+     <a href="Food1.jpg" class="image Food" data-index="1">
+     <img src="Food1.jpg" alt="Food">
+     </a> 
+     <a href="Food2.jpg" class="image Food" data-index="2">
+     <img src="Food2.jpg" alt="Food">
+     </a>
+     <a href="Food3.jpg" class="image Food" data-index="3">
+     <img src="Food3.jpg" alt="Food">
+     </a>
+     <a href="Food4.jpg"class="image Food" data-index="4">
+     <img src="Food4.jpg" alt="Food">
+     </a>
+     <a href="Food5.jpg" class="image Food" data-index="5">
+     <img src="Food5.jpg" alt="Food">
+     </a>
+     <a href="Food6.jpg"class="image Food" data-index="6">
+     <img src="Food6.jpg" alt="Food">
+     </a>
+     <a href="Food7.jpg" class="image Food" data-index="7">
+     <img src="Food7.jpg" alt="Food">
+     </a>
+
+     <a href="Nature1.jpg" class="image Nature" data-index="8">
+     <img src="Nature1.jpg" alt="Nature">
+     </a>
+     <a href="Nature2.jpg"class="image Nature" data-index="9">
+     <img src="Nature2.jpg"alt="Nature">
+     </a>
+     <a href= "Nature3.jpg" class="image Nature" data-index="10">
+     <img src="Nature3.jpg" alt="Nature">
+     </a>
+     <a href="Nature4.jpg" class="image Nature" data-index="11">
+     <img src="Nature4.jpg" alt="Nature">
+     </a>
+     <a href="Nature5.jpg" class="image Nature" data-index="12">
+     <img src="Nature5.jpg"alt="Nature">
+     </a>
+     <a href="Nature6.jpg" class="image Nature" data-index="13">
+     <img src="Nature6.jpg" alt="Nature">
+     </a>
+     <a href="y1.jpg" class="image Nature" data-index="14">
+     <img src="y1.jpg"alt="Nature">
+     </a>
+     <a href="n2.jpg"class="image Nature" data-index="15">
+     <img src="n2.jpg"alt="Nature">
+     </a>
+
+ 
+     <a href="Bike1.jpg" class="image Bikes" data-index="16">
+     <img src="Bike1.jpg" alt="Bikes">
+     </a>  
+     <a href="Bike2.jpg" class="image Bikes" data-index="17">
+     <img src="Bike2.jpg" alt="Bikes">
+     </a>
+     <a href="Bike3.jpg" class="image Bikes" data-index="18">
+     <img src="Bike3.jpg" alt="Bikes">
+     </a>
+     <a href="Bike4.jpg" class="image Bikes" data-index="19">
+     <img src="Bike4.jpg" alt="Bikes">
+     </a>
+     <a href="Bike5.jpg" class="image Bikes" data-index="20">
+     <img src="Bike5.jpg" alt="Bikes">
+     </a>
+     <a href="Bike6.jpg"class="image Bikes" data-index="21">
+     <img src="Bike6.jpg" alt="Bikes">
+     </a>
+
+     <a href="sketch1.jpg" class="image Sketches"data-index="22">
+     <img src="sketch1.jpg"alt="Sketches">
+     </a>
+     <a href="sketch2.jpg"class="image Sketches"data-index="23">
+     <img src="sketch2.jpg"alt="Sketches">
+     </a>
+     <a href="sketch3.jpg" class="image Sketches"data-index="24">
+     <img src="sketch3.jpg"alt="Sketches">
+     </a>
+     <a href="sketch4.jpg"class="image Sketches"data-index="25">
+     <img src="sketch4.jpg" alt="Sketches">
+     </a>
+     <a href="sketch5.jpg" class="image Sketches"data-index="26">
+     <img src="sketch5.jpg"alt="Sketches">
+     </a>
+     
+     <a href="Moon1.jpg" class="image Moon"data-index="27">
+     <img src="Moon1.jpg"alt="Moon">
+     </a>
+     <a href="Moon2.jpg" class="image Moon"data-index="28">
+     <img src="Moon2.jpg" alt="Moon">
+     </a>
+     <a href="Moon3.jpg" class="image Moon"data-index="29">
+     <img src="Moon3.jpg" alt="Moon">
+     </a>
+     <a href="Moon4.jpg" class="image Moon"data-index="30">
+     <img src="Moon4.jpg" alt="Moon">
+     </a>
+     <a href="Moon5.jpg" class="image Moon"data-index="31">
+     <img src="Moon5.jpg"alt="Moon">
+     </a>
+
+
+    </div>
+  </div>
+</div>
+
+<!--jqery cdn link-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!--magnific popup js cdn link--> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+<script>
+$(document).ready(function(){
+$('.buttons').click(function(){
+$(this).addClass('active').siblings().removeClass('active');
+var filter = $(this).attr('data-filter');
+if(filter == 'All'){
+$('.image').show(400);
+} else {
+$('.image').not('.'+filter).hide(200);
+$('.image').filter('.'+filter).show(400);
+}
+});
+$('.gallery').magnificPopup({
+   delegate:'a',
+   type:'image',
+   gallery:{}
+});
+});
+
+</script> 
+</body>
+</html>
